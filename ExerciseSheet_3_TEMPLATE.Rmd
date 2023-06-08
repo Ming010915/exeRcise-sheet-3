@@ -175,6 +175,37 @@ column_means \<- lapply(tax_data\[, -1\], 2, mean)
 
 column_means
 
+
+Correct answer:
+
+Replaced lapply with sapply in the line for calculating column-wise means. sapply simplifies the result into a vector, which is more appropriate for calculating means of numeric columns.
+
+```{r}
+### Create a sample data frame
+tax_data <- data.frame(Name = c("Munich GmbH", "ABC Inc.", "Backpacks 1980", "Bavarian Circus"),
+                       Tax_2019 = c(5000, 4000, 6000, 3500),
+                       Tax_2020 = c(4800, 4200, 5800, 3700),
+                       Tax_2021 = c(5200, 3800, 5900, 3400))
+
+### Calculate column-wise means
+column_means <- sapply(tax_data[, -1], mean)
+
+### View the updated data frame
+column_means
+```
+
+Rowwise mean:
+```{r}
+### Calculate row-wise means using rowwise() and mutate()
+row_means <- tax_data %>%
+  rowwise() %>%
+  mutate(Row_Mean = mean(c(Tax_2019, Tax_2020, Tax_2021)))
+
+### View the updated data frame
+row_means
+```
+
+
 b)  Using ChatGPT try to understand what the rapply() function does.
     Create an easy example with mock data where the function is used and
     explain it in your words.
