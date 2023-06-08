@@ -127,6 +127,11 @@ sum2022
 
 d)  Add a new column `year` to both datasets which holds the correct
     year for each.
+    
+```{r}
+v2021 <- v2021 %>% mutate(year = 2021)
+v2022 <- v2022 %>% mutate(year = 2022)
+```
 
 e)  Combine both datasets into one using `bind_rows()`.
 
