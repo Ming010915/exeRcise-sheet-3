@@ -109,6 +109,9 @@ v2022$Anzahl <- ifelse(v2022$Anzahl == "4 oder weniger","4",v2022$Anzahl)
 v2022$Anzahl <- as.numeric(v2022$Anzahl)
 ```
 
+A consequence due to this change would be the inaccuracy. Number that is less than 4 will always be stated as 4 
+
+
 c)  Calculate the total number of babies born in Munich in 2022
     and 2021. Which year had the bigger baby-boom?
 
