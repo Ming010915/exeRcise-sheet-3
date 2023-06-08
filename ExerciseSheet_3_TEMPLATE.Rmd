@@ -210,6 +210,18 @@ b)  Using ChatGPT try to understand what the rapply() function does.
     Create an easy example with mock data where the function is used and
     explain it in your words.
 
+The rapply() function in R is a recursive version of the lapply() function, which allows you to apply a function to each element of a list or nested list structure.
+```{r}
+# Create a nested list
+my_list <- list(a = 1, b = list(c = 2, d = 3), e = 4)
+
+# Apply the sum function to all numeric elements
+result <- rapply(my_list, sum, classes = "numeric")
+
+print(result)
+```
+In this example, b = 5 because 2 (b.c) + 3 (b.d) = 5 using the sum function
+
 ## Final Note
 
 Make sure to push all your commits and changes to GitHub before
